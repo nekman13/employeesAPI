@@ -56,8 +56,7 @@ ROOT_URLCONF = "employees.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -83,10 +82,9 @@ DATABASES = {
         "USER": "user_employees",
         "PASSWORD": "emplyees_password",
         "HOST": "localhost",
-        "PORT": "5432"
+        "PORT": "5432",
     }
 }
-
 
 
 # Password validation
