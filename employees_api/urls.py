@@ -1,7 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from employees_api.views import ListCreateEmployeesAPIView, EmployeeUpdateAPIView, EmployeeDeleteAPIView
+from employees_api.views import (
+    ListCreateEmployeesAPIView,
+    EmployeeUpdateAPIView,
+    EmployeeDeleteAPIView,
+)
 
 app_name = "employees_api"
 

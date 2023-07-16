@@ -14,18 +14,16 @@ class ListCreateEmployeesAPIView(ListCreateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeesSerializer
 
+    def post(self, request, *args, **kwargs):
+        return create_or_update(request)
+
+
 class EmployeeDeleteAPIView(DestroyAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeesSerializer
-    def post(self, request, *args, **kwargs):
-        return create_or_update(request)
 
 
 class EmployeeUpdateAPIView(UpdateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeesSerializer
 
-
-# class EmployeeViewSet(ViewSet):
-#     queryset = Employee.objects.all()
-#     serializer_class = EmployeesSerializer

@@ -7,12 +7,12 @@ from employees_api.models import Employee
 def create_or_update(request):
     flag = False
     for employee in Employee.objects.all().values(
-            "pk", "first_name", "last_name", "hire_date"
+        "pk", "first_name", "last_name", "hire_date"
     ):
         if (
-                request.data.get("first_name") == employee.get("first_name")
-                and request.data.get("last_name") == employee.get("last_name")
-                and request.data.get("hire_date") == employee.get("hire_date")
+            request.data.get("first_name") == employee.get("first_name")
+            and request.data.get("last_name") == employee.get("last_name")
+            and request.data.get("hire_date") == employee.get("hire_date")
         ):
             flag = True
             pk = employee.get("pk")
