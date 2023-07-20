@@ -1,11 +1,8 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from employees_api.views import (
-    ListCreateEmployeesAPIView,
-    EmployeeUpdateAPIView,
-    EmployeeDeleteAPIView,
-)
+from employees_api.views import (EmployeeDeleteAPIView, EmployeeUpdateAPIView,
+                                 ListCreateEmployeesAPIView)
 
 app_name = "employees_api"
 
@@ -15,7 +12,6 @@ app_name = "employees_api"
 
 urlpatterns = [
     path("employee/", ListCreateEmployeesAPIView.as_view()),
-    path("employee_update/<int:pk>/", EmployeeUpdateAPIView.as_view()),
     path("employee/<int:pk>/", EmployeeDeleteAPIView.as_view()),
     # path("", include(router.urls)),
 ]

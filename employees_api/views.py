@@ -1,10 +1,14 @@
+from django.views.generic import TemplateView
 from rest_framework import generics
-from rest_framework.generics import ListCreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (DestroyAPIView, ListCreateAPIView,
+                                     UpdateAPIView)
 from rest_framework.viewsets import ViewSet
 
 from employees_api.models import Employee
 from employees_api.serializers import EmployeesSerializer
 from employees_api.services import create_or_update
+from rest_framework.response import Response
+from rest_framework import status
 
 
 # Create your views here.
@@ -27,3 +31,6 @@ class EmployeeUpdateAPIView(UpdateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeesSerializer
 
+
+class IndexView(TemplateView):
+    template_name = "employees_api/index.html"
