@@ -23,6 +23,7 @@ def create_or_update(request):
         request.data.get("department"),
         request.data.get("salary"),
         request.data.get("hire_date"),
+        request.data.get("tasks"),
     )
     if not flag:
         new_employee = Employee.objects.create(
@@ -31,6 +32,7 @@ def create_or_update(request):
             department=input_employee_data[2],
             salary=input_employee_data[3],
             hire_date=input_employee_data[4],
+            tasks=input_employee_data[5],
         )
 
         return Response(model_to_dict(new_employee))
@@ -43,6 +45,7 @@ def create_or_update(request):
             modify_employee.department,
             modify_employee.salary,
             modify_employee.hire_date,
+            modify_employee.tasks,
         ) = input_employee_data
         modify_employee.save()
 
