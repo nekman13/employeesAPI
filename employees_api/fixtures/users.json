@@ -1,0 +1,12 @@
+[
+  {
+    "model": "employees_api.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "1111",
+      "email": "admin@example.com",
+      "is_superuser": "True"
+    }
+  }
+]
