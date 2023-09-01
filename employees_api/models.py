@@ -1,9 +1,23 @@
+from django.contrib.auth.models import AbstractUser
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from rest_framework import validators
 
 
+class User(AbstractUser):
+    """Класс модели пользователя"""
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
+
+
 class Employee(models.Model):
+    """Класс модели сотрудника"""
+
     first_name = models.CharField(max_length=100, verbose_name="Имя")
     last_name = models.CharField(max_length=100, verbose_name="Фамилия")
     department = models.CharField(max_length=100, verbose_name="Департамент")
